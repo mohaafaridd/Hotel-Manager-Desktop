@@ -4,9 +4,167 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hotel_Manager"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="Hotel Manager" Height="640" Width="300">
+    <DockPanel>
+
+        <GroupBox Header="Personal Information" DockPanel.Dock="Top">
+            <StackPanel>
+
+                <Grid Margin="0 5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="First Name"/>
+                    <TextBox Grid.Column="1"/>
+                </Grid>
+
+                <Grid Margin="0 5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Last Name"/>
+                    <TextBox Grid.Column="1"/>
+                </Grid>
+
+                <Grid Margin="0 5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="National ID"/>
+                    <TextBox Grid.Column="1"/>
+                </Grid>
+
+                <Grid Margin="0 5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Phone Number"/>
+                    <TextBox Grid.Column="1"/>
+                </Grid>
+
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Total Cost" Height="60" DockPanel.Dock="Top">
+            <Grid>
+
+            </Grid>
+        </GroupBox>
+
+        <Grid DockPanel.Dock="Top">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="Rooms" Height="60" DockPanel.Dock="Top" Grid.Column="0">
+                <Grid>
+
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="Beds" Height="60" DockPanel.Dock="Top" Grid.Column="1">
+                <Grid>
+
+                </Grid>
+            </GroupBox>
+
+        </Grid>
+
+        <Button Content="Room View" DockPanel.Dock="Top" Margin="0 10" Height="30"/>
+
+        <Grid DockPanel.Dock="Top">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <GroupBox Header="Room Servies" DockPanel.Dock="Top" Grid.Column="0">
+                <StackPanel>
+                    <CheckBox Margin="0 5" Content="Breakfast"/>
+                    <CheckBox Margin="0 5" Content="Lunch"/>
+                    <CheckBox Margin="0 5" Content="Dinner"/>
+                    <CheckBox Margin="0 5" Content="Fridge"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Leisures" DockPanel.Dock="Top" Grid.Column="1">
+                <StackPanel>
+                    <CheckBox Margin="0 5" Content="Air Conditioning"/>
+                    <CheckBox Margin="0 5" Content="Private Beach"/>
+                    <CheckBox Margin="0 5" Content="Golf Club"/>
+                    <CheckBox Margin="0 5" Content="Internet"/>
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+
+        <GroupBox Header="Date" DockPanel.Dock="Top">
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <DatePicker Grid.Column="0" Name="FromDate" 
+                            SelectedDate="{x:Static sys:DateTime.Now}" 
+                            SelectedDateFormat="Long" 
+                            DisplayDateStart="{x:Static sys:DateTime.Now}"/>
+
+                <TextBlock Text="&#x2794;" Grid.Column="1" FontSize="20" HorizontalAlignment="Center"/>
+
+                <DatePicker Grid.Column="2" Name="ToDate" SelectedDateFormat="Long"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Quick Options" DockPanel.Dock="Top">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Grid.Column="0" Text="0" Name="CustomDaysTxtBx"/>
+                <Button Grid.Column="1" Content="Add"     Name="CustomDaysBtn"/>
+                <Button Grid.Column="2" Content="7 Days"  Name="sevenDays"/>
+                <Button Grid.Column="3" Content="14 Days" Name="forteenDays"/>
+                <Button Grid.Column="4" Content="20 Days" Name="twentyDays"/>
+                <Button Grid.Column="5" Content="30 Days" Name="thirtyDays"/>
+
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" Name="ConfirmBtn"      Content="Confirm"/>
+                <Button Grid.Column="1" Name="newClientBtn"    Content="New Client"/>
+                <Button Grid.Column="2" Name="ManageClientBtn" Content="Manage Clients"/>
+                <Button Grid.Column="3" Name="ManageCostBtn"   Content="Manage Costs"/>
+            </Grid>
+        </GroupBox>
+    </DockPanel>
 </Window>
