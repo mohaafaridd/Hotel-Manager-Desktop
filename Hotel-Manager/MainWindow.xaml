@@ -120,7 +120,11 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <DatePicker Grid.Row="0"/>
+                    <DatePicker Grid.Row="0"
+                                SelectedDate="{x:Static sys:DateTime.Now}" 
+                                SelectedDateFormat="Long" 
+                                DisplayDateStart="{x:Static sys:DateTime.Now}"/>
+                    
                     <DatePicker Grid.Row="1"/>
 
                 </Grid>
@@ -139,7 +143,7 @@
                     <Button Grid.Column="0" Grid.Row="0" Style="{StaticResource MarginedButton}" Content="7 DAYS"/>
                     <Button Grid.Column="1" Grid.Row="0" Style="{StaticResource MarginedButton}" Content="14 DAYS"/>
                     <Button Grid.Column="1" Grid.Row="1" Style="{StaticResource MarginedButton}" Content="APPLY"/>
-                    <xctk:IntegerUpDown Grid.Column="0" Grid.Row="1"/>
+                    <xctk:IntegerUpDown Grid.Column="0" Grid.Row="1" Minimum="1" Maximum="30"/>
 
                 </Grid>
             </Grid>
