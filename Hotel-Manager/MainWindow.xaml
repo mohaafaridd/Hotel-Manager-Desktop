@@ -24,7 +24,7 @@
 
         <!-- Top Box / Cost -->
         <GroupBox Grid.ColumnSpan="2" Grid.Row="0" Header="Cost">
-            <TextBlock Text="Total Cost Place" 
+            <TextBlock Text="Total Cost" 
                        VerticalAlignment="Center" 
                        HorizontalAlignment="Center"
                        FontSize="30"/>
@@ -136,10 +136,10 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Column="0" Grid.Row="0" Content="7 DAYS"/>
-                    <Button Grid.Column="1" Grid.Row="0" Content="14 DAYS"/>
+                    <Button Grid.Column="0" Grid.Row="0" Style="{StaticResource MarginedButton}" Content="7 DAYS"/>
+                    <Button Grid.Column="1" Grid.Row="0" Style="{StaticResource MarginedButton}" Content="14 DAYS"/>
+                    <Button Grid.Column="1" Grid.Row="1" Style="{StaticResource MarginedButton}" Content="APPLY"/>
                     <xctk:IntegerUpDown Grid.Column="0" Grid.Row="1"/>
-                    <Button Grid.Column="1" Grid.Row="1" Content="APPLY"/>
 
                 </Grid>
             </Grid>
@@ -156,9 +156,9 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="0" Content="Confirm"/>
-                <Button Grid.Column="1" Content="New"/>
-                <Button Grid.Column="2" Content="Manage"/>
+                <Button Grid.Column="0" Style="{StaticResource MarginedButton}" Content="Confirm"/>
+                <Button Grid.Column="1" Style="{StaticResource MarginedButton}" Content="New"/>
+                <Button Grid.Column="2" Style="{StaticResource MarginedButton}" Content="Manage"/>
                 
             </Grid>
         </GroupBox>

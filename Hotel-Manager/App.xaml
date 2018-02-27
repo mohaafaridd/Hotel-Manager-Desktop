@@ -20,6 +20,10 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
 
+        <Style TargetType="Button" x:Key="MarginedButton">
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+        
         <Style TargetType="xctk:IntegerUpDown">
             <Setter Property="Height" Value="30"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
