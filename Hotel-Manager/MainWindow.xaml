@@ -24,7 +24,7 @@
 
         <!-- Top Box / Cost -->
         <GroupBox Grid.ColumnSpan="2" Grid.Row="0" Header="Cost">
-            <TextBlock Text="Total Cost" 
+            <TextBlock Text="{Binding TotalPayment, Mode=TwoWay, StringFormat='{}{0:c}'}" 
                        VerticalAlignment="Center" 
                        HorizontalAlignment="Center"
                        FontSize="30"/>
@@ -70,13 +70,17 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <RadioButton Grid.Column="0" Content="Single"/>
-                    <RadioButton Grid.Column="1" Content="Double"/>
+                    <RadioButton Grid.Column="0" Content="Single" Name="SingleBedRadio" Checked="RadioButton_Checked"/>
+                    <RadioButton Grid.Column="1" Content="Double" Name="DoubleBedRadio" Checked="RadioButton_Checked"/>
 
                 </Grid>
+
+                <CheckBox Grid.Row="1" Name="mealChkBx" Content="Meals" 
+                          Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
                 
-                <CheckBox Grid.Row="1" Name="mealChkBx" Content="Meals"/>
-                <CheckBox Grid.Row="2" Name="clenChkBx" Content="Cleaning"/>
+                <CheckBox Grid.Row="2" Name="cleanChkBx" Content="Cleaning" 
+                          Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+                
                 <Button Grid.Row="3" Content="Room Spectate"/>
 
             </Grid>
@@ -94,10 +98,10 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <CheckBox Grid.Row="0" Name="swimmingPoolChkBx" Content="Swimming Pool"/>
-                <CheckBox Grid.Row="1" Name="privateBeachChkBx" Content="Private Beach"/>
-                <CheckBox Grid.Row="2" Name="barChkBx" Content="Bar"/>
-                <xctk:IntegerUpDown Grid.Row="3" Value="0" Increment="2" Maximum="8" FormatString="0 Mb/s"/>
+                <CheckBox Grid.Row="0" Name="swimmingPoolChkBx" Content="Swimming Pool" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+                <CheckBox Grid.Row="1" Name="privateBeachChkBx" Content="Private Beach" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+                <CheckBox Grid.Row="2" Name="barChkBx" Content="Bar" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+                <xctk:IntegerUpDown Grid.Row="3" Value="0" Increment="2" Maximum="8" FormatString="0 Mb/s" ButtonSpinnerLocation="Left"/>
                 
             </Grid>
             
@@ -120,12 +124,18 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <DatePicker Grid.Row="0"
+                    <DatePicker Name="FromDate"
+                                Grid.Row="0"
                                 SelectedDate="{x:Static sys:DateTime.Now}" 
                                 SelectedDateFormat="Long" 
                                 DisplayDateStart="{x:Static sys:DateTime.Now}"/>
                     
-                    <DatePicker Grid.Row="1"/>
+                    <DatePicker Name="ToDate"
+                                Grid.Row="1"
+                                SelectedDateFormat="Long"
+                                DisplayDateStart="{x:Static sys:DateTime.Now}"
+                                SelectedDate="{x:Static sys:DateTime.Now}"
+                                SelectedDateChanged="DatePicker_SelectedDateChanged"/>
 
                 </Grid>
 
