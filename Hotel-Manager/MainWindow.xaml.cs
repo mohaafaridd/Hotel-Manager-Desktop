@@ -135,5 +135,12 @@ namespace Hotel_Manager
                 ToDate.SelectedDate = FromDate.SelectedDate + TimeSpan.FromDays(days);
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            RoomMenu win2 = new RoomMenu();
+            win2.Show();
+            this.Close();
+        }
     }
 }

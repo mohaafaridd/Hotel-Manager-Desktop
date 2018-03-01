@@ -20,6 +20,14 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
 
+        <Style TargetType="Button" x:Key="Room">
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width"  Value="20"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        
         <Style TargetType="Button" x:Key="MarginedButton">
             <Setter Property="Margin" Value="3"/>
         </Style>
@@ -38,6 +46,12 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
 
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        
         <Style TargetType="CheckBox">
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>

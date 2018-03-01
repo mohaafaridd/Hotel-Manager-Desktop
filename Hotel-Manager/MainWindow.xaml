@@ -81,7 +81,7 @@
                 <CheckBox Grid.Row="2" Name="cleanChkBx" Content="Cleaning" 
                           Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
                 
-                <Button Grid.Row="3" Content="Room Spectate"/>
+                <Button Grid.Row="3" Content="Room Spectate" Click="Button_Click"/>
 
             </Grid>
             
