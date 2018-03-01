@@ -101,7 +101,7 @@
                 <CheckBox Grid.Row="0" Name="swimmingPoolChkBx" Content="Swimming Pool" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
                 <CheckBox Grid.Row="1" Name="privateBeachChkBx" Content="Private Beach" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
                 <CheckBox Grid.Row="2" Name="barChkBx" Content="Bar" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
-                <xctk:IntegerUpDown Grid.Row="3" Value="0" Increment="2" Maximum="8" FormatString="0 Mb/s" ButtonSpinnerLocation="Left"/>
+                <xctk:IntegerUpDown Grid.Row="3" Value="0" Increment="2" Maximum="8" FormatString="0 Mb/s" ButtonSpinnerLocation="Left" ValueChanged="IntegerUpDown_ValueChanged"/>
                 
             </Grid>
             
@@ -150,10 +150,10 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Column="0" Grid.Row="0" Style="{StaticResource MarginedButton}" Content="7 DAYS"/>
-                    <Button Grid.Column="1" Grid.Row="0" Style="{StaticResource MarginedButton}" Content="14 DAYS"/>
-                    <Button Grid.Column="1" Grid.Row="1" Style="{StaticResource MarginedButton}" Content="APPLY"/>
-                    <xctk:IntegerUpDown Grid.Column="0" Grid.Row="1" Minimum="1" Maximum="30"/>
+                    <Button Grid.Column="0" Grid.Row="0" Style="{StaticResource MarginedButton}" Click="AddDays_Click" Name="sevenDays" Content="7 DAYS"/>
+                    <Button Grid.Column="1" Grid.Row="0" Style="{StaticResource MarginedButton}" Click="AddDays_Click" Name="twoWeeks" Content="14 DAYS"/>
+                    <Button Grid.Column="1" Grid.Row="1" Style="{StaticResource MarginedButton}" Click="AddDays_Click" Name="applyCustom" Content="APPLY"/>
+                    <xctk:IntegerUpDown Name="customDays" Grid.Column="0" Grid.Row="1" Minimum="1" Maximum="30" DefaultValue="1"/>
 
                 </Grid>
             </Grid>

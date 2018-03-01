@@ -25,7 +25,7 @@ namespace Hotel_Manager
 
         public decimal TotalPayment
         {
-            get { return totalPayment = (bedBill + roomService + leisures) * checkedDays; }
+            get { return totalPayment = (bedBill + roomService + leisures + internet) * checkedDays; }
             set
             {
                 totalPayment = value;
@@ -89,5 +89,20 @@ namespace Hotel_Manager
             }
         }
         #endregion
+
+        #region Internet
+        private decimal internet;
+
+        public decimal Internet
+        {
+            get { return internet; }
+            set
+            {
+                internet = value;
+                NotifyPropertyChanged("TotalPayment");
+            }
+        }
+        #endregion
+
     }
 }
